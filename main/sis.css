@@ -1,0 +1,89 @@
+
+
+.parentContainer {
+    height: 1080px;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: fixed;
+    width: 1920px;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.background,
+.clouds,
+.foreground,
+.lake,
+.gradient {
+    height: 100%;
+
+
+}
+.background,
+.foreground,
+.lake,
+.gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+.background {
+    z-index: 0;
+}
+.clouds {
+    position: relative;
+    z-index: 1;
+
+}
+.foreground {
+    z-index: 2;
+}
+.lake {
+    opacity: .4;
+    z-index: 3;
+}
+.gradient {
+  z-index: 4;
+  opacity: 0.25;
+}
+.isMoving {
+    animation-duration: 90000ms;
+    animation-iteration-count: infinite;
+    animation-name: goLeftAndReset;
+    animation-timing-function: linear;
+}
+
+@keyframes goLeftAndReset {
+    0% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+    100% {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+  .parentContainer {
+    height: 720px;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: fixed;
+    width: 1280px;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .arrow {
+    width: 50px;
+    margin-top: 50px;
+    transition: .25s;
+
+  }
+}
